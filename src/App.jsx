@@ -5,15 +5,18 @@ import viteLogo from '/vite.svg';
 import './App.css';
 
 function App() {
-  const { country, loading, error } = useContext(CountriesContext);
+  const { country, loading } = useContext(CountriesContext);
 
   return (
     <div className='body'>
-      {loading ? (
-        <p>Loading...</p>
-      ) : error ? (
-        <p>Error: {error}</p>
-      ) : (
+          {loading && (
+          <div class="loadingio-spinner-double-ring-2by998twmg8 loading" ><div class="ldio-yzaezf3dcmj">
+          <div></div>
+          <div></div>
+          <div><div></div></div>
+          <div><div></div></div>
+          </div></div>
+      )}
         <div className="cards">
           {country.map((c) => (
             <div key={c.cca3} className="wrapper__card">
@@ -26,7 +29,6 @@ function App() {
             </div>
           ))}
         </div>
-      )}
     </div>
   );
 }
